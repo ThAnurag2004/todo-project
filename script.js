@@ -1,19 +1,43 @@
-const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const body = document.querySelector('body');
 const inputbox = document.querySelectorAll('input');
 const tabicon = document.getElementById('favicon');
 
-// Theme switch
-if (!isDarkMode) {
-    body.classList.add("light-theme");
-    tabicon.href = 'light.png';
-    inputbox.forEach(input => {
-        input.style.border = "1px solid black";
-    });
-} else {
-    body.classList.add("dark-theme");
-    tabicon.href = 'dark.png';
+
+// Function to apply theme
+function applyTheme(isDarkMode) {
+    if (isDarkMode) {
+        body.classList.remove("light-theme");
+        body.classList.add("dark-theme");
+        tabicon.href = 'dark.png';
+
+        document.querySelectorAll('.task-list h1, .task-list p').forEach(el => {
+            el.style.color = 'white';
+        });
+
+    } else {
+        body.classList.remove("dark-theme");
+        body.classList.add("light-theme");
+        tabicon.href = 'light.png';
+        inputbox.forEach(input => {
+            input.style.border = "1px solid black";
+        });
+
+        document.querySelectorAll('.task-list h1, .task-list p').forEach(el => {
+            el.style.color = 'black';
+        });
+
+    }
 }
+
+// Initial theme based on system preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+applyTheme(prefersDark.matches);
+
+// Listen for system theme changes
+prefersDark.addEventListener('change', (e) => {
+    applyTheme(e.matches);
+});
+
 
 // Add task logic
 const button = document.querySelector('.button');
@@ -90,6 +114,8 @@ function displayTasks() {
     tasks.forEach((task, index) => {
         addTaskToDOM(task.title, task.description, index);
     });
+    applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+
 }
 
 // Initial load
