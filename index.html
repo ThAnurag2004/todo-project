@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="favicon" rel="icon" type="image/png" href="check-list.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Todo-list</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,27 +12,22 @@
     <div class="main">
         <div class="form">
            <div class="form-heading">
-            <h1>Add Task ✏️</h1>
+            <h1> <span style="color: red;">ADD</span> TASK ✏️</h1>
            </div>
            <div class="data">
                 <form class="form-data">
                     <label class="label">Title</label><br>
-                    <input type="text" placeholder="Enter Title" class="input"><br>
+                    <input type="text" placeholder="Enter Title" class="input" id="title"><br>
                     <label class="label">Details</label><br>
-                    <input type="text" placeholder="Enter Description" class="input"><br>
+                    <input type="text" placeholder="Enter Description" class="input" id="description"><br>
                     <input type="button" value="✚ ADD TASK" class="button">
                 </form>
            </div>
         </div>
         <div class="list">
-            <div class="heading"><h1>TASK LIST 📋</h1></div>
+            <div class="heading"><h1><span style="color: greenyellow;">TASK</span> LIST 📋</h1></div>
             <div class="list-items">
-                <div class="task-list">
-                    
-                </div>
-                <div class="task-list"></div>
-                <div class="task-list"></div>
-                <div class="task-list"></div>
+                
             </div>
         </div>
     </div>
