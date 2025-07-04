@@ -156,14 +156,18 @@ body{
     color: white;
 }
 
-@media (max-width: 768px) {
-    .form, .list {
-        width: 90%;
-        height: 45%;
-    }
-
+@media (max-width: 1000px) {
     .form{
-        border: none;
+        width: 100%;
+        height: max-content;
+        border-right: none;
+        margin-bottom: 0;
+    }
+    .list {
+        border: 1px solid;
+        width: 100%;
+        height: auto;
+        border-right: none;
     }
 }
 
