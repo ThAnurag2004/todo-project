@@ -178,3 +178,7 @@ body{
     background-color: black;
     color: white;
 }
+
+.alert{
+    border: 2px solid red;
+}

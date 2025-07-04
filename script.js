@@ -62,7 +62,15 @@ button.addEventListener('click', function () {
 
         displayTasks(); 
     } else {
-        alert("Please fill the entries!");
+         const inputbox = document.getElementById('title')
+         const intputbox2 = document.getElementById('description')
+         inputbox.classList.add('alert');
+         intputbox2.classList.add('alert');
+         inputbox.placeholder = "please enter title";
+         intputbox2.placeholder = "Please enter description"
+         setTimeout(function(){
+            location.reload();
+         },1000);
     }
 });
 
