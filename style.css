@@ -23,6 +23,7 @@ body{
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    overflow: auto;
 }
 
 .form{
@@ -156,18 +157,14 @@ body{
     color: white;
 }
 
-@media (max-width: 1000px) {
-    .form{
-        width: 100%;
-        height: max-content;
-        border-right: none;
-        margin-bottom: 0;
+@media (max-width: 768px) {
+    .form, .list {
+        width: 90%;
+        height: 45%;
     }
-    .list {
-        border: 1px solid;
-        width: 100%;
-        height: auto;
-        border-right: none;
+
+    .form{
+        border: none;
     }
 }
 
