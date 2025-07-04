@@ -8,7 +8,7 @@ function applyTheme(isDarkMode) {
     if (isDarkMode) {
         body.classList.remove("light-theme");
         body.classList.add("dark-theme");
-        tabicon.href = 'dark.png';
+        tabicon.href = 'icons/dark.png';
 
         document.querySelectorAll('.task-list h1, .task-list p').forEach(el => {
             el.style.color = 'white';
@@ -17,7 +17,7 @@ function applyTheme(isDarkMode) {
     } else {
         body.classList.remove("dark-theme");
         body.classList.add("light-theme");
-        tabicon.href = 'light.png';
+        tabicon.href = 'icons/light.png';
         inputbox.forEach(input => {
             input.style.border = "1px solid black";
         });
